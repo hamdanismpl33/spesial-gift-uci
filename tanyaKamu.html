@@ -1,0 +1,252 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Buat Kamu</title>
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Rubik+Vinyl&display=swap');
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.cover{
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(170deg, #FFD4B2, #FFF6BD) ;
+		}
+		.content{
+			width: calc(100% - 10%);
+			height: 300px;
+			background-color: transparent;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.card{
+			width: 280px;
+			height: 200px;
+			background-color: #FFF8E1;
+			box-shadow: 5px 5px 12px rgba(0,0,0, .3);
+			border-radius: 5px;
+			position: absolute;
+			top: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: .6s;
+			font-family: 'Righteous', cursive;
+		}
+		.card.pass{
+			background-color: #F5EBE0;
+			z-index: 2;
+			height: 230px;
+		}
+		
+		.pass .pertanyaan{
+			position: absolute;
+			top: 10px;
+			height: 100px;
+			width: 80%;
+			background-color: #F2E5E5;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			padding: 5px 5px 0 10px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			border: .3px solid black;
+			border-radius: 3px;
+		}
+		.pertanyaan::-webkit-scrollbar {
+  			display: none;
+		}
+		.pass input{
+			background-color: white;
+			height: 40px;
+			border-radius: 5px;
+			padding: 2px 2px 2px 7px;
+			border: none;
+			width: 80%;
+			position: absolute;
+			bottom: 60px;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+		input::placeholder{
+			text-transform: lowercase;
+		}
+		.pass button{
+			bottom: 20px;
+			position: absolute;
+			left: 10%;
+			padding: 5px;
+			border: none;
+			border-radius: 3px;
+			transition: .5s;
+			color: grey;
+		}
+		.pass button:hover{
+			background-color: #FFDDD2;
+			letter-spacing: .3px;
+			color: black;
+		}
+		.jawab{
+			opacity: .3;
+		}
+		.jawab img{
+			width: 100px;
+			height: 120px;
+			border-radius: 5px;
+			border: 2px solid rgba(0,0,0, .3);
+			position: absolute;
+			background-color: #FFDDD2;
+			left: 20px;
+		}
+		.jawab .kata{
+			position: absolute;
+			right: 5px;
+			width: 50%;
+			height: 125px;
+overflow-y: scroll;
+			padding: 10px;
+			font-size: 14px;
+			letter-spacing: 1px;
+			font-weight: bold;
+			text-transform: uppercase;
+			line-height: 1.7em;
+			border-radius: 3px;
+			background-color: rgba(255,255,255,.5 );
+		}
+		.jawab .kata::-webkit-scrollbar {
+  			display: none;
+		}
+		
+		.popUp{
+			width: 160px;
+			height: 100px;
+			background-color: rgba(255,255,255, .4);
+			display: flex;
+			justify-content:center;
+			border-radius: 10px;
+			font-size: 16px;
+			font-weight: bold;
+			letter-spacing: 2px;
+			flex-wrap: wrap;
+			box-shadow: 0 0 12px rgba(0,0,0, .1);
+			position: absolute;
+			top: -140px;
+			transition: 1s;
+font-family: 'Righteous', cursive;
+		}
+		.popUp img{
+			width: 50px;
+		}
+		label{
+			width: 80%;
+			background: transparent;
+			height: 10px;
+			bottom: 107px;
+			z-index: 1;
+			position: absolute;
+			font-size: 10px;
+			letter-spacing: 2px;
+			padding: 5px;
+			color: red;
+			animation: label 1s infinite;
+		}
+		@keyframes label{
+			to{
+				font-weight: bold;
+				letter-spacing: 2.3px;
+			}
+		}
+		.dari{
+			position: absolute;
+			top: -40px;
+			font-family: 'Rubik Vinyl', cursive;
+		}
+h3{
+font-size: 8px;
+letter-spacing: 2px;
+color: rgba(0,0,0, .6);
+position:absolute;
+left:50%;
+transform: translateX(-50%);
+font-family: arial;
+bottom: 10px;
+width:100%;
+text-align: center;
+}
+	</style>
+</head>
+<body>
+	<div class="cover">
+		<div class="popUp">
+				<img src="tiktok_tanya_g1.gif" alt="">
+				Jawaban Salah
+		</div>
+		<div class="content">
+			<div class="dari">
+				<h1>Dari Aku</h1>
+			</div>
+			<div class="card jawab">
+				<span class="kata">
+					cuma mau kasih tahu tanggal 32 oksigen berbayar</span>
+				<img src="tiktok_tahunBaru2023.gif" alt="">
+			</div>
+			<div class="card pass">
+				<span class="pertanyaan">
+					<!--disini tempet tulisa pertanyaan ny-->
+					siapa hayo nama orang yang lucu dan baik banget 🤭 ? 
+				</span>
+				<label></label>
+					<input type="text" name="" id="inputJ" placeholder="Masukkan jawaban mu" autofocus="">
+			<button onclick="jawab(inputJawaban)">Kirim jawaban</button>
+			</div>
+		</div>
+<h3>Dibuat oleh haki > jawabannya : haki</h3>
+	</div>
+	
+	<script>
+		const inputJawaban = document.querySelector(".pass input")
+		const bgInput = document.querySelector(".card.pass") 
+		const bgJawab = document.querySelector(".card.jawab")
+		const l = document.querySelector("label") 
+		// set jawabannya disini, tanda space dan  caracter kybord berpengaruh, besar kecil huruf enggak masalah
+		const jawabanSet = "haki"
+		
+		let jawab = (a)=>{
+			if(a.value.toLowerCase() == jawabanSet.toLowerCase()){
+				bgInput.style.zIndex = "-1"
+				bgJawab.style.opacity = "1"
+				l.style.color = "transparent"
+			}else if(a.value == ""){
+				l.innerText = "Jawaban tidak boleh kosong !"
+			}else{
+				salah()
+			}
+		}
+		
+		function salah(){
+			const popUp = document.querySelector(".popUp")
+			popUp.style.top = "15px"
+			setTimeout(()=>{
+			popUp.style.top = "-140px"
+			}, 1800)
+			
+		}
+	</script>
+</body>
+</html>

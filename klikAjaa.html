@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box ;
+			font-family: arial;
+			font-weight: bold;
+		}
+		.pembungkus{
+			width: 100%;
+			height: 100vh ;
+			background-color: #FFB9B9;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.content{
+			width: 330px;
+			overflow: hidden;
+			height: 300px;
+			background: #FF9A8C;
+			text-align: center;
+			border-radius: 10px;
+			padding: 10px 5px;
+			position: relative;
+			box-shadow: 0 0 3px black;
+		}
+		 img{
+			width: 100px;
+			height: 100px;
+			border-radius: 20px;
+		}
+		h1{
+			margin-top: 40px;
+		}
+		span{
+			display: inline-block;
+		}
+		#b{
+			width: 100%;
+			height: 60px;
+			position: absolute;
+			bottom: 10px;
+			background-color: transparent;
+			display: flex;
+			justify-content: space-around ;
+			align-items: center;
+		}
+		#iya,#tidak{
+			padding: 10px;
+			border-radius: 10px;
+			transition: .5s;
+			cursor: pointer;
+		}
+		#iya:hover,#tidak:hover{
+			padding: 15px;
+		}
+		#iya{
+			background: #93D9A3;
+		}
+		#tidak{
+			background: #FF6464;
+		}
+		.jawaban{
+			width: 100%;
+			height: 100vh;
+			background: rgba(0,0,0,.8);
+			position: fixed;
+			z-index: -3;
+      text-align: center;		
+      padding-top: 7%;
+		}
+		.jawaban img{
+			height: 150px;
+			width: 150px;
+		}
+		.jawaban h1{
+			color: white;
+			letter-spacing: 2px;
+		}
+		a{
+			 text-decoration: none;
+			 text-transform: underline;
+			 font-weight: bold ;
+			 letter-spacing: 2px;
+			 color: white;
+			 position: absolute;
+			 bottom: 20px;
+			 left: 10px;
+			 cursor: pointer;
+			 font-size: 10px;
+		}
+	</style>
+	<title>Buat Kamu</title>
+</head>
+<body>
+	<div class="pembungkus">
+		<div class="jawaban">
+			<a href="">Refresh</a>
+		</div>
+		<div class="content">
+	<!-- src link gambarnya bisa disalin -->
+			<img src="https://media3.giphy.com/media/1msDUtCpBk1BihoOGD/giphy.webp?cid=82a1493bpxk7f73p5sp1ejx4xn0rx26rrh4zu970oweu1t83&rid=giphy.webp&ct=g" alt="">
+		<h1><span id="kata"></span> 😊 bobok ya</h1>
+		<div id="b">
+		<span class="" id="iya">Iyaa 😁</span>
+		<span id="tidak">Enggak mau 😝</span>
+		</div>
+		</div>
+	</div>
+	
+	<script>
+	// isi kalimatnya bisa klian tambahin
+	// tapi perhatiin contoh kata nya 
+	// jan lupa "" sama tanda ,
+		let daftar_kata = ["Cantik", "Imut", "Ayang", "Simanis"]
+		let kata = document.querySelector("#kata")
+		let iya = document.querySelector("#iya")
+		let tidak = document.querySelector("#tidak")
+		let jawaban = document.querySelector(".jawaban")
+		
+		let count = 0
+		setInterval(() => {
+			kata.innerHTML = daftar_kata[count]
+			count++
+			if(count >= daftar_kata.length){
+				count = 0
+			}
+		}, 1000 )
+		
+		iya.addEventListener("click", () => {
+			setTimeout(() => {
+				let img = document.createElement("img")
+			let h1 = document.createElement("h1")
+			// yang link gambar
+			img.setAttribute("src", "https://media4.giphy.com/media/1vZeoJWjQfpOymFCKF/giphy.webp?cid=82a1493bsciuvi0tekgbaze8fxr5be4ho2rnq5ndikxheb0w&rid=giphy.webp&ct=g")
+			
+			// yang nah kan...
+			h1.innerHTML = "Nah kan tambah cantik 😘"
+			
+			jawaban.appendChild(img)
+			jawaban.appendChild(h1)
+			jawaban.style.zIndex = "1"
+			}, 500 )
+			tidak.style.display = "none"
+		})
+		
+		tidak.addEventListener("click", () => {
+			setTimeout(() => {
+				let img = document.createElement("img")
+			let h1 = document.createElement("h1")
+			// yang link buat gambar
+			img.setAttribute("src", "https://media2.giphy.com/media/3aDnVPp6BLPSh1117r/giphy.webp?cid=82a1493broays9cb9lmb9qilrzjlbzyqe9vk5sjbg8vfgahg&rid=giphy.webp&ct=g")
+			
+			// yang kamu mah
+			h1.innerHTML = "Kamu mah 🙄"
+			
+			jawaban.appendChild(img)
+			jawaban.appendChild(h1)
+			jawaban.style.zIndex = "1"
+			}, 500 )
+			iya.style.display = "none"
+		})
+		
+		
+	</script>
+</body>
+</html>
